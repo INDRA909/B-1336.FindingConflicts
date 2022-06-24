@@ -32,7 +32,7 @@ public class ConflictResult
         // Удаление бригад не имеющих среди приборов, хотя бы 1 на связи
         foreach (var brigade in brigadesConflicts.Keys.ToArray())
         {
-            if (brigadesConflicts[brigade].Find(device => device.Device.IsOnline = true) == null)
+            if (brigadesConflicts[brigade].Find(device => device.Device.IsOnline = true) == null && brigadesConflicts[brigade].Count<=1)
             {
                 brigadesConflicts.Remove(brigade);
             }

@@ -10,7 +10,7 @@ public class JsonLoader : IDataLoader<DeviceInfo>, IDataUploader<Conflict>
     /// </summary>
     public List<DeviceInfo> LoadData()
     {
-        using (FileStream file = new FileStream(@"Devices.json", FileMode.Open))
+        using (FileStream file = new FileStream(@"C:\Users\ivanr\OneDrive\Рабочий стол\Devices.json", FileMode.Open))
         {
             var option = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
             List<DeviceInfo>? devicesInfo = JsonSerializer.Deserialize<List<DeviceInfo>>(file,option);
