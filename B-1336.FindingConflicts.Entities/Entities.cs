@@ -14,7 +14,6 @@ public class Brigade
 {
     public string Code { get; set; }
 }
-[Serializable]
 public class Conflict
 {
     public string BrigadeCode { get; set; }

@@ -1,7 +1,4 @@
 ﻿using B_1336.FindingConflicts.Entities;
-using System.Linq;
-using System.Runtime.CompilerServices;
-
 namespace B_1336.FindingConflicts.Application;
 public class ConflictResult
 {
@@ -17,31 +14,32 @@ public class ConflictResult
     /// <returns></returns>
     public List<Conflict> FindingConflicts()
     {
-        Dictionary<String,List<DeviceInfo>> conflict = new Dictionary<String,List<DeviceInfo>>();
+        Dictionary<string,List<DeviceInfo>> brigadesConflicts = new Dictionary<string,List<DeviceInfo>>();
         //Группироввание записей по бригадам в словарь
         foreach (DeviceInfo device in _devicesInfo)
         {
             //если такая бригада уже есть, то добавить прибор к ней
-            if (conflict.ContainsKey(device.Brigade.Code))
+            if (brigadesConflicts.ContainsKey(device.Brigade.Code))
             {
-                conflict[device.Brigade.Code].Add(device);
+                brigadesConflicts[device.Brigade.Code].Add(device);
             }
             else // Иначе инициализировать новую бригаду и добавить прибор
             {
-                conflict.Add(device.Brigade.Code, new List<DeviceInfo>());
-                conflict[device.Brigade.Code].Add(device);
+                brigadesConflicts.Add(device.Brigade.Code, new List<DeviceInfo>());
+                brigadesConflicts[device.Brigade.Code].Add(device);
             }
         }
         // Удаление бригад не имеющих среди приборов, хотя бы 1 на связи
-        foreach (var brigade in conflict.Keys.ToArray())
+        foreach (var brigade in brigadesConflicts.Keys.ToArray())
         {
-            if (conflict[brigade].Find(device => device.Device.IsOnline = true) == null)
+            if (brigadesConflicts[brigade].Find(device => device.Device.IsOnline = true) == null)
             {
-                conflict.Remove(brigade);
+                brigadesConflicts.Remove(brigade);
             }
         }
+        //Конвертирование словаря в список
         List<Conflict> result = 
-            conflict.Select(x=> new Conflict(){BrigadeCode = x.Key, DevicesSerials = x.Value
+            brigadesConflicts.Select(x=> new Conflict(){BrigadeCode = x.Key, DevicesSerials = x.Value
                     .Select(z=> z.Device.SerialNumber)
                     .ToArray()})
                     .ToList();
