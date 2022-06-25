@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>B_1336.FindingConflicts.Settings</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SimpleInjector" Version="5.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\B-1336.FindingConflicts.Data.Json\B-1336.FindingConflicts.Data.Json.csproj" />
+    <ProjectReference Include="..\B-1336.FindingConflicts.DI\B-1336.FindingConflicts.DI.csproj" />
+    <ProjectReference Include="..\B-1336.FindingConflicts.Entities\B-1336.FindingConflicts.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

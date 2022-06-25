@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\B-1336.FindingConflicts.DI\B-1336.FindingConflicts.DI.csproj" />
+  </ItemGroup>
+
 </Project>

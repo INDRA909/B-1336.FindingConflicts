@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "//f7Bng4pG/NLnZ+JC8aI2pm3eHTgGXPDwEm5rgXGtoNxUC/60cHcaCCm+1i3t9gycBcoTYrrayRx3tBi+SzDw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ivanr\\OneDrive\\Рабочий стол\\B-1336.FindingConflicts\\B-1336.FindingConflictd.Settings\\B-1336.FindingConflicts.Settings.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
+    "C:\\Users\\ivanr\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
+    "C:\\Users\\ivanr\\.nuget\\packages\\simpleinjector\\5.3.3\\simpleinjector.5.3.3.nupkg.sha512",
+    "C:\\Users\\ivanr\\.nuget\\packages\\system.componentmodel\\4.0.1\\system.componentmodel.4.0.1.nupkg.sha512",
+    "C:\\Users\\ivanr\\.nuget\\packages\\system.runtime\\4.1.0\\system.runtime.4.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

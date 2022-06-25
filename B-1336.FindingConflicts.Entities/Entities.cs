@@ -1,20 +1,22 @@
-﻿namespace B_1336.FindingConflicts.Entities;
-public class DeviceInfo
+﻿using B_1336.FindingConflicts.DI;
+
+namespace B_1336.FindingConflicts.Entities;
+public class DeviceInfo :IDeviceInfo
 {
-    public Device Device { get; set; }
-    public Brigade Brigade { get; set; }
+    public IDevice Device { get; set; }
+    public IBrigade Brigade { get; set; }
 }
-public class Device
+public class Device : IDevice
 {
     public string SerialNumber { get; set; }
     public bool IsOnline { get; set; }
 }
 
-public class Brigade
+public class Brigade :IBrigade
 {
     public string Code { get; set; }
 }
-public class Conflict
+public class Conflict : IConflict
 {
     public string BrigadeCode { get; set; }
     public string[] DevicesSerials { get; set; }

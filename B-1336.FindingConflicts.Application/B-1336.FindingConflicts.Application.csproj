@@ -15,10 +15,12 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="6.21.61" />
+    <PackageReference Include="SimpleInjector" Version="5.3.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\B-1336.FindingConflicts.Entities\B-1336.FindingConflicts.Entities.csproj" />
+    <ProjectReference Include="..\B-1336.FindingConflictd.Settings\B-1336.FindingConflicts.Settings.csproj" />
+    <ProjectReference Include="..\B-1336.FindingConflicts.DI\B-1336.FindingConflicts.DI.csproj" />
   </ItemGroup>
 
 </Project>
