@@ -1,10 +1,11 @@
 ﻿using B_1336.FindingConflicts.Application;
-using Microsoft.EntityFrameworkCore;
 
 var jsonLoader = new JsonLoader();
 //Получить данные о используемых приборах
 var devicesInfo = jsonLoader.LoadData();
-ConflictResult result = new ConflictResult(devicesInfo);
+Console.WriteLine("Данные успешно считаны из Devices.json");
+ConflictResult result = new ConflictResult(devicesInfo.ToList());
 //Выгрузить данные о конфликтах
 jsonLoader.UploadData(result.FindingConflicts());
+Console.WriteLine("Данные успешно записаны в Conflicts.json");
 

@@ -25,7 +25,22 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "7af1123b-abb8-4270-bb0d-4f434cf78dea": {
+      "ProjectGuid": "7af1123b-abb8-4270-bb0d-4f434cf78dea",
+      "DisplayName": "B-1336.FindingConflicts.DI",
+      "ColorIndex": 4
+    },
+    "48652238-1395-4d2b-a00c-8513b433f77a": {
+      "ProjectGuid": "48652238-1395-4d2b-a00c-8513b433f77a",
+      "DisplayName": "B-1336.FindingConflicts.Settings",
+      "ColorIndex": 5
+    },
+    "b9433230-ff05-45c0-8e39-fcb0139a1222": {
+      "ProjectGuid": "b9433230-ff05-45c0-8e39-fcb0139a1222",
+      "DisplayName": "B-1336.FindingConflicts.Data.Json",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 7
 }

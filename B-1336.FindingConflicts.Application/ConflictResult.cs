@@ -12,7 +12,7 @@ public class ConflictResult
     /// Группировка по бригадам с хотя бы 1 прибором на связи
     /// </summary>
     /// <returns></returns>
-    public List<Conflict> FindingConflicts()
+    public IEnumerable<Conflict> FindingConflicts()
     {
         Dictionary<string,List<DeviceInfo>> brigadesConflicts = new Dictionary<string,List<DeviceInfo>>();
         //Группироввание записей по бригадам в словарь
@@ -32,7 +32,7 @@ public class ConflictResult
         // Удаление бригад не имеющих среди приборов, хотя бы 1 на связи
         foreach (var brigade in brigadesConflicts.Keys.ToArray())
         {
-            if (brigadesConflicts[brigade].Find(device => device.Device.IsOnline = true) == null && brigadesConflicts[brigade].Count<=1)
+            if (brigadesConflicts[brigade].TrueForAll(device => device.Device.IsOnline == false) || brigadesConflicts[brigade].Count == 1)
             {
                 brigadesConflicts.Remove(brigade);
             }

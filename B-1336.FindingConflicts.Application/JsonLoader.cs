@@ -8,9 +8,9 @@ public class JsonLoader : IDataLoader<DeviceInfo>, IDataUploader<Conflict>
     /// <summary>
     /// Десериализовать DeviceInfo.json
     /// </summary>
-    public List<DeviceInfo> LoadData()
+    public IEnumerable<DeviceInfo> LoadData()
     {
-        using (FileStream file = new FileStream(@"C:\Users\ivanr\OneDrive\Рабочий стол\Devices.json", FileMode.Open))
+        using (FileStream file = new FileStream(@"..\..\Devices.json", FileMode.Open))
         {
             var option = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
             List<DeviceInfo>? devicesInfo = JsonSerializer.Deserialize<List<DeviceInfo>>(file,option);
@@ -20,11 +20,11 @@ public class JsonLoader : IDataLoader<DeviceInfo>, IDataUploader<Conflict>
     /// <summary>
     /// Сереализовать список бригад с использованными каждой бригадой приборами(хотя бы 1 "В сети")
     /// </summary>
-    public void UploadData(List<Conflict> conflicts)
+    public void UploadData(IEnumerable<Conflict> conflicts)
     {
-        using (FileStream file = new FileStream("Conflict.json", FileMode.OpenOrCreate))
+        using (FileStream file = new FileStream("Conflict.json", FileMode.Create))
         {
-            JsonSerializer.Serialize<List<Conflict>>(file, conflicts);
+            JsonSerializer.Serialize(file, conflicts);
         }
     }
 
